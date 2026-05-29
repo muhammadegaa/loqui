@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-ink: #05070b;
+  --color-ink2: #080b11;
+  --color-panel: rgba(18, 24, 34, 0.6);
+  --color-text: #eaf1f8;
+  --color-muted: #94a3b5;
+  --color-faint: #5c6878;
+  --color-c1: #2dd4bf;
+  --color-c2: #22d3ee;
+  --color-c3: #3b82f6;
+  --color-hair: rgba(160, 200, 235, 0.12);
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-geist-sans);
+  --font-serif: var(--font-instrument);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--color-ink);
+  color: var(--color-text);
+  font-family: var(--font-display), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* the brand gradient, reused everywhere */
+.brand-grad {
+  background-image: linear-gradient(105deg, #2dd4bf 0%, #22d3ee 45%, #3b82f6 100%);
+}
+.brand-grad-text {
+  background-image: linear-gradient(105deg, #2dd4bf 0%, #22d3ee 45%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* grain overlay — the premium "not flat" trick */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
