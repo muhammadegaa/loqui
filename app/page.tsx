@@ -9,7 +9,12 @@ import {
   Shield,
   Sparkles,
   LogOut,
+  Coffee,
 } from "lucide-react";
+
+// Set NEXT_PUBLIC_BMC_URL (e.g. https://buymeacoffee.com/yourname) to show the
+// footer support link. Framed around the real cost it covers: code signing.
+const BMC_URL = process.env.NEXT_PUBLIC_BMC_URL || "";
 
 import { LogoMark } from "@/components/Logo";
 import { MeshGradient } from "@/components/MeshGradient";
@@ -193,6 +198,20 @@ function HomeContent() {
 
       <footer className="relative z-[2] px-10 pb-[60px] pt-[84px] text-center font-mono text-[12.5px] text-[var(--color-faint)]">
         // loqui · free &amp; private · made for people who&rsquo;d rather talk
+        {BMC_URL && (
+          <>
+            {" · "}
+            <a
+              href={BMC_URL}
+              target="_blank"
+              rel="noreferrer"
+              title="Helps cover Apple code-signing"
+              className="inline-flex items-center gap-1 align-middle transition hover:text-[var(--color-muted)]"
+            >
+              <Coffee size={12} /> buy me a coffee
+            </a>
+          </>
+        )}
       </footer>
     </main>
   );
