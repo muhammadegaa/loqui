@@ -76,7 +76,7 @@ export function DownloadButton({
       <button
         onClick={onClick}
         disabled={dimmed || busy}
-        title="After downloading, right-click the app and choose Open the first time."
+        title="First open: System Settings → Privacy & Security → Open Anyway (not notarized yet)."
         className={`brand-grad inline-flex items-center gap-2.5 rounded-[13px] font-semibold text-[#04121a] shadow-[0_10px_34px_rgba(34,211,238,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_44px_rgba(34,211,238,0.45)] ${pad} ${className} ${dimmed ? "cursor-default opacity-70 hover:translate-y-0" : ""}`}
       >
         <Icon size={iconSize} className={busy ? "animate-spin" : ""} />

@@ -22,6 +22,7 @@ import { ProductScene } from "@/components/ProductScene";
 import { HowItWorks, WhyLoqui, FinalCTA } from "@/components/Sections";
 import { AuthProvider, useAuth } from "@/components/AuthProvider";
 import { DownloadButton } from "@/components/DownloadButton";
+import { FirstLaunchHelp } from "@/components/FirstLaunchHelp";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const rise = {
@@ -140,6 +141,16 @@ function HomeContent() {
           className="font-mono text-[12.5px] text-[var(--color-faint)]"
         >
           hold the 🌐 globe key · no subscription · no cloud · works on a plane
+        </motion.div>
+
+        <motion.div
+          variants={rise}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.7, ease, delay: 0.45 }}
+          className="mt-9"
+        >
+          <FirstLaunchHelp />
         </motion.div>
       </section>
 
