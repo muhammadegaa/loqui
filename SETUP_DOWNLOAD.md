@@ -39,14 +39,14 @@ From the app repo, build and zip:
 
 ```bash
 cd ../wispr-clone
-bash release.sh          # builds, signs, and writes dist/Loqui.zip
+bash release.sh          # builds, signs, and writes dist/Loqui.dmg
 ```
 
 Then upload it to R2 (put the same R2_* values in `loqui-landing/.env.local` first):
 
 ```bash
 cd ../loqui-landing
-node scripts/upload-release.mjs ../wispr-clone/dist/Loqui.zip
+node scripts/upload-release.mjs ../wispr-clone/dist/Loqui.dmg
 ```
 
 Re-run both whenever you ship a new build.

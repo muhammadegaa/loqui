@@ -30,6 +30,6 @@ export function r2Configured(): boolean {
 /// A presigned GET URL for the release artifact, valid for `expiresIn` seconds.
 export async function presignDownload(expiresIn = 60): Promise<string> {
   const Bucket = process.env.R2_BUCKET!;
-  const Key = process.env.R2_OBJECT_KEY || "Loqui.zip";
+  const Key = process.env.R2_OBJECT_KEY || "Loqui.dmg";
   return getSignedUrl(r2(), new GetObjectCommand({ Bucket, Key }), { expiresIn });
 }

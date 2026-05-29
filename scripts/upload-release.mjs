@@ -31,7 +31,7 @@ const {
   R2_ACCESS_KEY_ID,
   R2_SECRET_ACCESS_KEY,
   R2_BUCKET,
-  R2_OBJECT_KEY = "Loqui.zip",
+  R2_OBJECT_KEY = "Loqui.dmg",
 } = process.env;
 
 if (!R2_ACCOUNT_ID || !R2_ACCESS_KEY_ID || !R2_SECRET_ACCESS_KEY || !R2_BUCKET) {
@@ -47,6 +47,6 @@ const s3 = new S3Client({
 
 const Body = readFileSync(resolve(file));
 await s3.send(
-  new PutObjectCommand({ Bucket: R2_BUCKET, Key: R2_OBJECT_KEY, Body, ContentType: "application/zip" })
+  new PutObjectCommand({ Bucket: R2_BUCKET, Key: R2_OBJECT_KEY, Body, ContentType: "application/x-apple-diskimage" })
 );
 console.log(`uploaded ${file} → r2://${R2_BUCKET}/${R2_OBJECT_KEY} (${(Body.length / 1e6).toFixed(1)} MB)`);
