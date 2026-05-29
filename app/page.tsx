@@ -196,21 +196,18 @@ function HomeContent() {
       <WhyLoqui />
       <FinalCTA />
 
-      <footer className="relative z-[2] px-10 pb-[60px] pt-[84px] text-center font-mono text-[12.5px] text-[var(--color-faint)]">
-        // loqui · free &amp; private · made for people who&rsquo;d rather talk
+      <footer className="relative z-[2] flex flex-col items-center gap-4 px-10 pb-[60px] pt-[84px] text-center font-mono text-[12.5px] text-[var(--color-faint)]">
+        <span>// loqui · free &amp; private · made for people who&rsquo;d rather talk</span>
         {BMC_URL && (
-          <>
-            {" · "}
-            <a
-              href={BMC_URL}
-              target="_blank"
-              rel="noreferrer"
-              title="Helps cover Apple code-signing"
-              className="inline-flex items-center gap-1 align-middle transition hover:text-[var(--color-muted)]"
-            >
-              <Coffee size={12} /> buy me a coffee
-            </a>
-          </>
+          <a
+            href={BMC_URL}
+            target="_blank"
+            rel="noreferrer"
+            title="Helps cover Apple code-signing"
+            className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-hair)] bg-[var(--color-panel)] px-3.5 py-1.5 text-[var(--color-muted)] backdrop-blur transition hover:-translate-y-0.5 hover:text-[var(--color-text)]"
+          >
+            <Coffee size={13} /> buy me a coffee
+          </a>
         )}
       </footer>
     </main>
