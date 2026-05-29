@@ -54,6 +54,17 @@ function HomeContent() {
         <div className="flex items-center gap-7 text-sm text-[var(--color-muted)]">
           <a href="#features" className="transition hover:text-[var(--color-text)]">Features</a>
           <a href="#privacy" className="transition hover:text-[var(--color-text)]">Privacy</a>
+          {BMC_URL && (
+            <a
+              href={BMC_URL}
+              target="_blank"
+              rel="noreferrer"
+              title="Helps cover Apple code-signing"
+              className="inline-flex items-center gap-1.5 transition hover:text-[var(--color-text)]"
+            >
+              <Coffee size={14} /> Support
+            </a>
+          )}
           {user ? (
             <div className="flex items-center gap-3">
               <span className="max-w-[160px] truncate text-[13px] text-[var(--color-text)]">
