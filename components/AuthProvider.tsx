@@ -17,7 +17,7 @@ import {
   type User,
 } from "firebase/auth";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
-import { auth, db } from "@/lib/firebase";
+import { getAuthClient, getDb } from "@/lib/firebase";
 import { AuthModal } from "./AuthModal";
 
 type AuthCtx = {
@@ -35,7 +35,7 @@ const Ctx = createContext<AuthCtx | null>(null);
 // Record the signup so we have a list of users (Firestore: users/{uid}).
 async function recordUser(user: User, provider: string) {
   await setDoc(
-    doc(db, "users", user.uid),
+    doc(getDb(), "users", user.uid),
     {
       email: user.email,
       displayName: user.displayName ?? null,
@@ -52,7 +52,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
 
-  useEffect(() => onAuthStateChanged(auth, (u) => {
+  useEffect(() => onAuthStateChanged(getAuthClient(), (u) => {
     setUser(u);
     setLoading(false);
   }), []);
@@ -60,18 +60,18 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const promptAuth = () => setModalOpen(true);
 
   const signInGoogle = async () => {
-    const res = await signInWithPopup(auth, new GoogleAuthProvider());
+    const res = await signInWithPopup(getAuthClient(), new GoogleAuthProvider());
     await recordUser(res.user, "google");
   };
   const signInEmail = async (email: string, pw: string) => {
-    const res = await signInWithEmailAndPassword(auth, email, pw);
+    const res = await signInWithEmailAndPassword(getAuthClient(), email, pw);
     await recordUser(res.user, "email");
   };
   const signUpEmail = async (email: string, pw: string) => {
-    const res = await createUserWithEmailAndPassword(auth, email, pw);
+    const res = await createUserWithEmailAndPassword(getAuthClient(), email, pw);
     await recordUser(res.user, "email");
   };
-  const signOut = () => fbSignOut(auth);
+  const signOut = () => fbSignOut(getAuthClient());
 
   return (
     <Ctx.Provider value={{ user, loading, signInGoogle, signInEmail, signUpEmail, signOut, promptAuth }}>
