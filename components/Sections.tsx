@@ -51,7 +51,7 @@ export function WhyLoqui() {
   const rows = [
     { cloud: "Sends your audio to the cloud", loqui: "Stays on your Mac. Always." },
     { cloud: "Screenshots your active window", loqui: "Reads the app name, nothing else" },
-    { cloud: "$15/month subscription", loqui: "Free. No account." },
+    { cloud: "$15/month subscription", loqui: "Free download, no account" },
     { cloud: "Electron, ~800MB of RAM", loqui: "Native Swift, idle at ~0% CPU" },
     { cloud: "Dead without internet", loqui: "Works on a plane" },
   ];
@@ -105,7 +105,7 @@ export function FinalCTA() {
           Stop typing. <span className="brand-grad-text font-serif italic">Start talking.</span>
         </h2>
         <p className="mx-auto mb-8 max-w-[460px] text-[var(--color-muted)]">
-          Free, runs on your Mac, no account to make. Grab it and start talking.
+          It runs on your Mac, not the cloud. Free to download, no account. Grab it and start talking.
         </p>
         <div className="flex justify-center">
           <DownloadButton size="lg" />

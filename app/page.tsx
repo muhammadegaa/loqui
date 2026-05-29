@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import {
   ShieldCheck,
   Zap,
-  Infinity as InfinityIcon,
+  Plane,
   Mic,
   Shield,
   Sparkles,
@@ -94,7 +94,7 @@ function HomeContent() {
           className="mb-[30px] inline-flex items-center gap-[9px] rounded-full border border-[var(--color-hair)] bg-[var(--color-panel)] px-4 py-2 text-[12.5px] text-[var(--color-muted)] backdrop-blur"
         >
           <span className="h-[7px] w-[7px] animate-pulse rounded-full bg-[var(--color-c2)] shadow-[0_0_12px_var(--color-c2)]" />
-          Free · No account · Runs on your Mac
+          Private · On-device · Native
         </motion.div>
 
         <motion.h1
@@ -116,7 +116,7 @@ function HomeContent() {
           className="mx-auto mb-9 max-w-[600px] text-[20px] leading-relaxed text-[var(--color-muted)]"
         >
           So stop typing. Hold one key, talk, and Loqui writes it down for you,
-          cleaned up, in whatever app you&rsquo;re in. No cloud. No account. No $15 a month.
+          cleaned up, in whatever app you&rsquo;re in. It runs on your Mac, not someone&rsquo;s cloud.
         </motion.p>
 
         <motion.div
@@ -154,7 +154,7 @@ function HomeContent() {
         {[
           { icon: ShieldCheck, b: "Your audio stays put.", t: "It never leaves your Mac. Not once." },
           { icon: Zap, b: "Native, not Electron.", t: "Sits at ~0% CPU until you talk." },
-          { icon: InfinityIcon, b: "Free, and staying free.", t: "No trial, no upsell, no card." },
+          { icon: Plane, b: "Works offline.", t: "On a plane, on the subway, anywhere." },
         ].map((x, i) => (
           <motion.div
             key={i}
@@ -208,7 +208,7 @@ function HomeContent() {
       <FinalCTA />
 
       <footer className="relative z-[2] flex flex-col items-center gap-4 px-10 pb-[60px] pt-[84px] text-center font-mono text-[12.5px] text-[var(--color-faint)]">
-        <span>// loqui · free, private, no account · for people who&rsquo;d rather talk than type</span>
+        <span>// loqui · private, on-device, yours · for people who&rsquo;d rather talk than type</span>
         {BMC_URL && (
           <a
             href={BMC_URL}

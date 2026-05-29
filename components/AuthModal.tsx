@@ -57,7 +57,7 @@ export function AuthModal({
             </h2>
             <p className="mb-6 text-[13.5px] text-[var(--color-muted)]">
               {mode === "signup"
-                ? "Sign up to download Loqui — it's free."
+                ? "Create an account to download Loqui."
                 : "Sign in to get the download."}
             </p>
 
