@@ -9,7 +9,7 @@ const rise = { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } };
 
 export function HowItWorks() {
   const steps = [
-    { k: "01", t: "Hold ⌥Space", d: "Press and hold from anywhere — any app, any text field. No window to open." },
+    { k: "01", t: "Hold 🌐 globe", d: "Press and hold from anywhere — any app, any text field. No window to open." },
     { k: "02", t: "Speak naturally", d: "Talk like a human. Loqui transcribes on-device with Whisper, in real time." },
     { k: "03", t: "Release", d: "Polished text appears at your cursor — filler stripped, punctuation fixed, tone matched to the app." },
   ];
@@ -51,7 +51,7 @@ export function WhyLoqui() {
   const rows = [
     { cloud: "Sends your audio to the cloud", loqui: "Runs 100% on your Mac" },
     { cloud: "Screenshots your active window", loqui: "Reads only the app name, never your screen" },
-    { cloud: "$15/month subscription", loqui: "Free forever, open source" },
+    { cloud: "$15/month subscription", loqui: "Free forever, no account" },
     { cloud: "Electron — heavy, ~800MB RAM", loqui: "Native Swift — ~0% idle CPU" },
     { cloud: "Useless without internet", loqui: "Works offline, even on a plane" },
   ];
@@ -105,13 +105,13 @@ export function FinalCTA() {
           Stop typing. <span className="brand-grad-text font-serif italic">Start talking.</span>
         </h2>
         <p className="mx-auto mb-8 max-w-[460px] text-[var(--color-muted)]">
-          Free, open source, on-device. Install in one click — your voice never leaves your Mac.
+          Free, private, on-device. Install in one click — your voice never leaves your Mac.
         </p>
         <div className="flex justify-center">
           <DownloadButton size="lg" />
         </div>
         <div className="mt-5 font-mono text-[12px] text-[var(--color-faint)]">
-          macOS 14+ · Apple Silicon &amp; Intel · ~5MB
+          macOS 14+ · Apple Silicon · 100% on-device
         </div>
       </motion.div>
     </section>

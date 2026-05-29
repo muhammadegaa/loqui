@@ -11,13 +11,6 @@ import {
   LogOut,
 } from "lucide-react";
 
-function GithubIcon({ size = 16 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z" />
-    </svg>
-  );
-}
 import { LogoMark } from "@/components/Logo";
 import { MeshGradient } from "@/components/MeshGradient";
 import { ProductScene } from "@/components/ProductScene";
@@ -56,7 +49,6 @@ function HomeContent() {
         <div className="flex items-center gap-7 text-sm text-[var(--color-muted)]">
           <a href="#features" className="transition hover:text-[var(--color-text)]">Features</a>
           <a href="#privacy" className="transition hover:text-[var(--color-text)]">Privacy</a>
-          <a href="https://github.com/muhammadegaa/loqui-mac" target="_blank" rel="noreferrer" className="transition hover:text-[var(--color-text)]">GitHub</a>
           {user ? (
             <div className="flex items-center gap-3">
               <span className="max-w-[160px] truncate text-[13px] text-[var(--color-text)]">
@@ -86,7 +78,7 @@ function HomeContent() {
           className="mb-[30px] inline-flex items-center gap-[9px] rounded-full border border-[var(--color-hair)] bg-[var(--color-panel)] px-4 py-2 text-[12.5px] text-[var(--color-muted)] backdrop-blur"
         >
           <span className="h-[7px] w-[7px] animate-pulse rounded-full bg-[var(--color-c2)] shadow-[0_0_12px_var(--color-c2)]" />
-          Free · Open source · 100% on-device
+          Free · Private · 100% on-device
         </motion.div>
 
         <motion.h1
@@ -119,8 +111,8 @@ function HomeContent() {
           className="mb-[18px] flex flex-wrap items-center justify-center gap-[14px]"
         >
           <DownloadButton />
-          <a href="https://github.com/muhammadegaa/loqui-mac" target="_blank" rel="noreferrer" className="inline-flex items-center gap-[9px] rounded-[13px] border border-[var(--color-hair)] bg-[var(--color-panel)] px-6 py-[15px] text-[15px] font-medium backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/10">
-            <GithubIcon size={16} /> Star on GitHub
+          <a href="#features" className="inline-flex items-center gap-[9px] rounded-[13px] border border-[var(--color-hair)] bg-[var(--color-panel)] px-6 py-[15px] text-[15px] font-medium backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/10">
+            How it works
           </a>
         </motion.div>
 
@@ -131,7 +123,7 @@ function HomeContent() {
           transition={{ duration: 0.7, ease, delay: 0.37 }}
           className="font-mono text-[12.5px] text-[var(--color-faint)]"
         >
-          ⌥Space · no subscription · no cloud · runs offline
+          🌐 globe key · no subscription · no cloud · runs offline
         </motion.div>
       </section>
 
@@ -146,7 +138,7 @@ function HomeContent() {
         {[
           { icon: ShieldCheck, b: "On-device.", t: "Audio never leaves your Mac." },
           { icon: Zap, b: "Native & light.", t: "Not Electron. ~0% idle CPU." },
-          { icon: InfinityIcon, b: "Free forever.", t: "Open source, no trial games." },
+          { icon: InfinityIcon, b: "Free forever.", t: "No subscription, no trial games." },
         ].map((x, i) => (
           <motion.div
             key={i}
@@ -173,7 +165,7 @@ function HomeContent() {
         className="relative z-[2] mx-auto mt-[84px] grid max-w-[1000px] grid-cols-1 gap-[18px] px-10 md:grid-cols-3"
       >
         {[
-          { icon: Mic, h: "Talk, don't type", p: "Hold ⌥Space, speak naturally, release. Polished text lands wherever your cursor is — every app, every field." },
+          { icon: Mic, h: "Talk, don't type", p: "Hold the 🌐 globe key, speak naturally, release. Polished text lands wherever your cursor is — every app, every field." },
           { icon: Shield, h: "Private by design", p: "Whisper runs on your machine. No screenshots, no uploads, no account. It even works on a plane." },
           { icon: Sparkles, h: "Knows the room", p: "Writes casual in Slack, formal in Mail — by reading only the app name, never your screen." },
         ].map((c, i) => (
@@ -200,7 +192,7 @@ function HomeContent() {
       <FinalCTA />
 
       <footer className="relative z-[2] px-10 pb-[60px] pt-[84px] text-center font-mono text-[12.5px] text-[var(--color-faint)]">
-        // loqui · free &amp; open source · made for people who&rsquo;d rather talk · github.com/muhammadegaa/loqui-mac
+        // loqui · free &amp; private · made for people who&rsquo;d rather talk
       </footer>
     </main>
   );
