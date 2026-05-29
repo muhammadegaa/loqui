@@ -56,7 +56,7 @@ function HomeContent() {
         <div className="flex items-center gap-7 text-sm text-[var(--color-muted)]">
           <a href="#features" className="transition hover:text-[var(--color-text)]">Features</a>
           <a href="#privacy" className="transition hover:text-[var(--color-text)]">Privacy</a>
-          <a href="#" className="transition hover:text-[var(--color-text)]">GitHub</a>
+          <a href="https://github.com/muhammadegaa/loqui-mac" target="_blank" rel="noreferrer" className="transition hover:text-[var(--color-text)]">GitHub</a>
           {user ? (
             <div className="flex items-center gap-3">
               <span className="max-w-[160px] truncate text-[13px] text-[var(--color-text)]">
@@ -119,9 +119,9 @@ function HomeContent() {
           className="mb-[18px] flex flex-wrap items-center justify-center gap-[14px]"
         >
           <DownloadButton />
-          <button className="inline-flex items-center gap-[9px] rounded-[13px] border border-[var(--color-hair)] bg-[var(--color-panel)] px-6 py-[15px] text-[15px] font-medium backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/10">
+          <a href="https://github.com/muhammadegaa/loqui-mac" target="_blank" rel="noreferrer" className="inline-flex items-center gap-[9px] rounded-[13px] border border-[var(--color-hair)] bg-[var(--color-panel)] px-6 py-[15px] text-[15px] font-medium backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/10">
             <GithubIcon size={16} /> Star on GitHub
-          </button>
+          </a>
         </motion.div>
 
         <motion.div
@@ -200,7 +200,7 @@ function HomeContent() {
       <FinalCTA />
 
       <footer className="relative z-[2] px-10 pb-[60px] pt-[84px] text-center font-mono text-[12.5px] text-[var(--color-faint)]">
-        // loqui · free &amp; open source · made for people who&rsquo;d rather talk · github.com/egglabs/loqui
+        // loqui · free &amp; open source · made for people who&rsquo;d rather talk · github.com/muhammadegaa/loqui-mac
       </footer>
     </main>
   );

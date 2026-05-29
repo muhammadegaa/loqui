@@ -3,8 +3,8 @@
 import { Download, Check } from "lucide-react";
 import { useAuth } from "./AuthProvider";
 
-// Where the signed bundle will live once notarized + released.
-const DOWNLOAD_URL = "https://github.com/muhammadegaa/loqui/releases/latest";
+// The macOS app + releases live in the loqui-mac repo.
+const DOWNLOAD_URL = "https://github.com/muhammadegaa/loqui-mac/releases/latest";
 
 export function DownloadButton({
   size = "md",
