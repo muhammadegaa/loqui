@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import {
-  Download,
   ShieldCheck,
   Zap,
   Infinity as InfinityIcon,
   Mic,
   Shield,
   Sparkles,
+  LogOut,
 } from "lucide-react";
 
 function GithubIcon({ size = 16 }: { size?: number }) {
@@ -22,6 +22,8 @@ import { LogoMark } from "@/components/Logo";
 import { MeshGradient } from "@/components/MeshGradient";
 import { ProductScene } from "@/components/ProductScene";
 import { HowItWorks, WhyLoqui, FinalCTA } from "@/components/Sections";
+import { AuthProvider, useAuth } from "@/components/AuthProvider";
+import { DownloadButton } from "@/components/DownloadButton";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const rise = {
@@ -30,6 +32,15 @@ const rise = {
 };
 
 export default function Home() {
+  return (
+    <AuthProvider>
+      <HomeContent />
+    </AuthProvider>
+  );
+}
+
+function HomeContent() {
+  const { user, signOut } = useAuth();
   return (
     <main className="relative">
       <MeshGradient />
@@ -46,9 +57,22 @@ export default function Home() {
           <a href="#features" className="transition hover:text-[var(--color-text)]">Features</a>
           <a href="#privacy" className="transition hover:text-[var(--color-text)]">Privacy</a>
           <a href="#" className="transition hover:text-[var(--color-text)]">GitHub</a>
-          <span className="rounded-full border border-[var(--color-hair)] bg-white/5 px-4 py-2 text-[13.5px] font-medium text-[var(--color-text)] backdrop-blur transition hover:-translate-y-px hover:bg-white/10">
-            Download
-          </span>
+          {user ? (
+            <div className="flex items-center gap-3">
+              <span className="max-w-[160px] truncate text-[13px] text-[var(--color-text)]">
+                {user.email}
+              </span>
+              <button
+                onClick={() => signOut()}
+                title="Sign out"
+                className="grid h-8 w-8 place-items-center rounded-full border border-[var(--color-hair)] bg-white/5 text-[var(--color-muted)] transition hover:text-[var(--color-text)]"
+              >
+                <LogOut size={14} />
+              </button>
+            </div>
+          ) : (
+            <DownloadButton className="!px-4 !py-2 !text-[13.5px] !shadow-none" />
+          )}
         </div>
       </nav>
 
@@ -94,9 +118,7 @@ export default function Home() {
           transition={{ duration: 0.7, ease, delay: 0.29 }}
           className="mb-[18px] flex flex-wrap items-center justify-center gap-[14px]"
         >
-          <button className="brand-grad inline-flex items-center gap-[9px] rounded-[13px] px-7 py-[15px] text-[15.5px] font-semibold text-[#04121a] shadow-[0_10px_34px_rgba(34,211,238,0.32)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_44px_rgba(34,211,238,0.45)]">
-            <Download size={17} /> Download for Mac
-          </button>
+          <DownloadButton />
           <button className="inline-flex items-center gap-[9px] rounded-[13px] border border-[var(--color-hair)] bg-[var(--color-panel)] px-6 py-[15px] text-[15px] font-medium backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/10">
             <GithubIcon size={16} /> Star on GitHub
           </button>

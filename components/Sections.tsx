@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Check, X, Download } from "lucide-react";
+import { Check, X } from "lucide-react";
+import { DownloadButton } from "./DownloadButton";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 const rise = { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } };
@@ -106,9 +107,9 @@ export function FinalCTA() {
         <p className="mx-auto mb-8 max-w-[460px] text-[var(--color-muted)]">
           Free, open source, on-device. Install in one click — your voice never leaves your Mac.
         </p>
-        <button className="brand-grad inline-flex items-center gap-2.5 rounded-[14px] px-8 py-4 text-[16px] font-semibold text-[#04121a] shadow-[0_12px_40px_rgba(34,211,238,0.4)] transition hover:-translate-y-0.5 hover:shadow-[0_18px_52px_rgba(34,211,238,0.55)]">
-          <Download size={18} /> Download for Mac
-        </button>
+        <div className="flex justify-center">
+          <DownloadButton size="lg" />
+        </div>
         <div className="mt-5 font-mono text-[12px] text-[var(--color-faint)]">
           macOS 14+ · Apple Silicon &amp; Intel · ~5MB
         </div>
