@@ -9,9 +9,9 @@ const rise = { initial: { opacity: 0, y: 24 }, animate: { opacity: 1, y: 0 } };
 
 export function HowItWorks() {
   const steps = [
-    { k: "01", t: "Hold 🌐 globe", d: "Press and hold from anywhere — any app, any text field. No window to open." },
-    { k: "02", t: "Speak naturally", d: "Talk like a human. Loqui transcribes on-device with Whisper, in real time." },
-    { k: "03", t: "Release", d: "Polished text appears at your cursor — filler stripped, punctuation fixed, tone matched to the app." },
+    { k: "01", t: "Hold the globe key", d: "Press and hold it from any app. No window to open, no mode to switch into." },
+    { k: "02", t: "Just talk", d: "Say what you mean. Loqui listens on your Mac with Whisper while you do." },
+    { k: "03", t: "Let go", d: "Clean text drops in at your cursor. The ums and false starts are already gone." },
   ];
   return (
     <section className="relative z-[2] mx-auto mt-[120px] max-w-[1000px] px-10">
@@ -20,14 +20,14 @@ export function HowItWorks() {
         transition={{ duration: 0.6, ease }}
         className="mb-3 text-center text-[40px] font-semibold tracking-tight max-md:text-[30px]"
       >
-        Faster than typing. <span className="brand-grad-text font-serif italic">Every time.</span>
+        Three steps. <span className="brand-grad-text font-serif italic">That&rsquo;s it.</span>
       </motion.h2>
       <motion.p
         variants={rise} initial="initial" whileInView="animate" viewport={{ once: true }}
         transition={{ duration: 0.6, ease, delay: 0.08 }}
         className="mx-auto mb-14 max-w-[520px] text-center text-[var(--color-muted)]"
       >
-        Three seconds from thought to text. No mode-switching, no cleanup.
+        From the thought in your head to text on the screen in about three seconds. Nothing to open, nothing to fix after.
       </motion.p>
       <div className="grid grid-cols-1 gap-[18px] md:grid-cols-3">
         {steps.map((s, i) => (
@@ -49,11 +49,11 @@ export function HowItWorks() {
 
 export function WhyLoqui() {
   const rows = [
-    { cloud: "Sends your audio to the cloud", loqui: "Runs 100% on your Mac" },
-    { cloud: "Screenshots your active window", loqui: "Reads only the app name, never your screen" },
-    { cloud: "$15/month subscription", loqui: "Free forever, no account" },
-    { cloud: "Electron — heavy, ~800MB RAM", loqui: "Native Swift — ~0% idle CPU" },
-    { cloud: "Useless without internet", loqui: "Works offline, even on a plane" },
+    { cloud: "Sends your audio to the cloud", loqui: "Stays on your Mac. Always." },
+    { cloud: "Screenshots your active window", loqui: "Reads the app name, nothing else" },
+    { cloud: "$15/month subscription", loqui: "Free. No account." },
+    { cloud: "Electron, ~800MB of RAM", loqui: "Native Swift, idle at ~0% CPU" },
+    { cloud: "Dead without internet", loqui: "Works on a plane" },
   ];
   return (
     <section className="relative z-[2] mx-auto mt-[120px] max-w-[920px] px-10">
@@ -62,8 +62,8 @@ export function WhyLoqui() {
         transition={{ duration: 0.6, ease }}
         className="mb-12 text-center text-[40px] font-semibold tracking-tight max-md:text-[30px]"
       >
-        Everything you like about AI dictation,{" "}
-        <span className="brand-grad-text font-serif italic">none of what you don&rsquo;t.</span>
+        The cloud apps want your audio.{" "}
+        <span className="brand-grad-text font-serif italic">We don&rsquo;t.</span>
       </motion.h2>
       <motion.div
         variants={rise} initial="initial" whileInView="animate" viewport={{ once: true }}
@@ -105,7 +105,7 @@ export function FinalCTA() {
           Stop typing. <span className="brand-grad-text font-serif italic">Start talking.</span>
         </h2>
         <p className="mx-auto mb-8 max-w-[460px] text-[var(--color-muted)]">
-          Free, private, on-device. Install in one click — your voice never leaves your Mac.
+          Free, runs on your Mac, no account to make. Grab it and start talking.
         </p>
         <div className="flex justify-center">
           <DownloadButton size="lg" />

@@ -94,7 +94,7 @@ function HomeContent() {
           className="mb-[30px] inline-flex items-center gap-[9px] rounded-full border border-[var(--color-hair)] bg-[var(--color-panel)] px-4 py-2 text-[12.5px] text-[var(--color-muted)] backdrop-blur"
         >
           <span className="h-[7px] w-[7px] animate-pulse rounded-full bg-[var(--color-c2)] shadow-[0_0_12px_var(--color-c2)]" />
-          Free · Private · 100% on-device
+          Free · No account · Runs on your Mac
         </motion.div>
 
         <motion.h1
@@ -104,8 +104,8 @@ function HomeContent() {
           transition={{ duration: 0.7, ease, delay: 0.13 }}
           className="mb-6 text-[76px] font-semibold leading-[1.0] tracking-[-0.038em] max-md:text-[48px]"
         >
-          Speak. It&rsquo;s{" "}
-          <span className="brand-grad-text font-serif italic">written, perfectly.</span>
+          You think{" "}
+          <span className="brand-grad-text font-serif italic">faster than you type.</span>
         </motion.h1>
 
         <motion.p
@@ -115,8 +115,8 @@ function HomeContent() {
           transition={{ duration: 0.7, ease, delay: 0.21 }}
           className="mx-auto mb-9 max-w-[600px] text-[20px] leading-relaxed text-[var(--color-muted)]"
         >
-          Hold one key, talk naturally, and Loqui types polished text into any
-          app — powered by on-device AI. Your voice never leaves your Mac.
+          So stop typing. Hold one key, talk, and Loqui writes it down for you,
+          cleaned up, in whatever app you&rsquo;re in. No cloud. No account. No $15 a month.
         </motion.p>
 
         <motion.div
@@ -139,7 +139,7 @@ function HomeContent() {
           transition={{ duration: 0.7, ease, delay: 0.37 }}
           className="font-mono text-[12.5px] text-[var(--color-faint)]"
         >
-          🌐 globe key · no subscription · no cloud · runs offline
+          hold the 🌐 globe key · no subscription · no cloud · works on a plane
         </motion.div>
       </section>
 
@@ -152,9 +152,9 @@ function HomeContent() {
         className="relative z-[2] mx-auto mt-16 flex max-w-[980px] flex-wrap justify-center gap-[14px] px-10"
       >
         {[
-          { icon: ShieldCheck, b: "On-device.", t: "Audio never leaves your Mac." },
-          { icon: Zap, b: "Native & light.", t: "Not Electron. ~0% idle CPU." },
-          { icon: InfinityIcon, b: "Free forever.", t: "No subscription, no trial games." },
+          { icon: ShieldCheck, b: "Your audio stays put.", t: "It never leaves your Mac. Not once." },
+          { icon: Zap, b: "Native, not Electron.", t: "Sits at ~0% CPU until you talk." },
+          { icon: InfinityIcon, b: "Free, and staying free.", t: "No trial, no upsell, no card." },
         ].map((x, i) => (
           <motion.div
             key={i}
@@ -181,9 +181,9 @@ function HomeContent() {
         className="relative z-[2] mx-auto mt-[84px] grid max-w-[1000px] grid-cols-1 gap-[18px] px-10 md:grid-cols-3"
       >
         {[
-          { icon: Mic, h: "Talk, don't type", p: "Hold the 🌐 globe key, speak naturally, release. Polished text lands wherever your cursor is — every app, every field." },
-          { icon: Shield, h: "Private by design", p: "Whisper runs on your machine. No screenshots, no uploads, no account. It even works on a plane." },
-          { icon: Sparkles, h: "Knows the room", p: "Writes casual in Slack, formal in Mail — by reading only the app name, never your screen." },
+          { icon: Mic, h: "Typing is the bottleneck", p: "Your mouth is faster than your hands. Hold the globe key, talk, and the text shows up wherever you were already typing." },
+          { icon: Shield, h: "Nothing leaves your Mac", p: "Transcription happens on your machine. No uploads, no screenshots of your screen, no account to make. It works on a plane." },
+          { icon: Sparkles, h: "It reads the room", p: "Casual in Slack, buttoned-up in Mail. It checks which app you're in to set the tone, and nothing else." },
         ].map((c, i) => (
           <motion.div
             key={i}
@@ -208,7 +208,7 @@ function HomeContent() {
       <FinalCTA />
 
       <footer className="relative z-[2] flex flex-col items-center gap-4 px-10 pb-[60px] pt-[84px] text-center font-mono text-[12.5px] text-[var(--color-faint)]">
-        <span>// loqui · free &amp; private · made for people who&rsquo;d rather talk</span>
+        <span>// loqui · free, private, no account · for people who&rsquo;d rather talk than type</span>
         {BMC_URL && (
           <a
             href={BMC_URL}

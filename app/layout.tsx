@@ -12,9 +12,9 @@ const instrument = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: "Loqui — Speak, it's written",
+  title: "Loqui — talk instead of type",
   description:
-    "Free, private voice dictation for macOS. Hold one key, talk, and Loqui types polished text into any app — powered by on-device AI. Your voice never leaves your Mac.",
+    "Free voice dictation for macOS that runs on your Mac, not the cloud. Hold one key, talk, and Loqui writes clean text into any app. No subscription, no account.",
 };
 
 export default function RootLayout({
