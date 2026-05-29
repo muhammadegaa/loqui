@@ -12,9 +12,9 @@ import {
   Coffee,
 } from "lucide-react";
 
-// Set NEXT_PUBLIC_BMC_URL (e.g. https://buymeacoffee.com/yourname) to show the
-// footer support link. Framed around the real cost it covers: code signing.
-const BMC_URL = process.env.NEXT_PUBLIC_BMC_URL || "";
+// Footer support link, framed around the real cost it covers: Apple code signing.
+// Public URL, so it's the default; NEXT_PUBLIC_BMC_URL can override it.
+const BMC_URL = process.env.NEXT_PUBLIC_BMC_URL || "https://buymeacoffee.com/egglabs";
 
 import { LogoMark } from "@/components/Logo";
 import { MeshGradient } from "@/components/MeshGradient";
